@@ -42,22 +42,34 @@ return {
         -- Setup mason
         require('mason').setup()
 
-        -- Configure LSP servers
+        -- Ensure necessary LSP servers are installed
         require('mason-lspconfig').setup {
-            ensure_installed = { 'lua_ls', 'pyright' },
+            ensure_installed = { 'lua_ls', 'pyright', 'clangd' },
         }
 
-        -- Example LSP server setup
+        -- Setup LSP servers
+
+        -- Lua language server
         lspconfig.lua_ls.setup {
             on_attach = function(client, bufnr)
                 -- Custom on_attach code here
             end,
         }
 
+        -- Python language server
         lspconfig.pyright.setup {
             on_attach = function(client, bufnr)
                 -- Custom on_attach code here
             end,
+        }
+
+        -- C/C++ language server (clangd)
+        lspconfig.clangd.setup {
+            on_attach = function(client, bufnr)
+                -- Custom on_attach code here
+            end,
+            cmd = { "clangd" },  -- Ensure clangd is installed and accessible
+            filetypes = { "c", "cpp", "objc", "objcpp" },  -- Filetypes supported by clangd
         }
     end,
 }

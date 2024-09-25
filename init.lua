@@ -9,3 +9,6 @@ load_lua_files("lua/config")
 -- Load user-specific configurations
 load_lua_files("lua/user-config")
 vim.opt.shortmess:append("W")
+
+require('dap').set_log_level('DEBUG')
+require("dapui").setup()
