@@ -3,6 +3,8 @@ vim.wo.number = true
 vim.opt.clipboard = "unnamedplus"
 vim.g.mapleader = ' '
 
+vim.cmd[[colorscheme catppuccin]]
+
 require("toggleterm").setup{}
 
 vim = vim or {}
