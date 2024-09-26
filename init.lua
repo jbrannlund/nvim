@@ -1,6 +1,5 @@
 require("config.lazy")
 
-
 vim.cmd[[colorscheme catppuccin]]
 
 local load_lua_files = require("functions.load_lua_files")
