@@ -1,5 +1,0 @@
-return {
-	"gruvbox-community/gruvbox" 
-}
-
-

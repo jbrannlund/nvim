@@ -1,4 +1,3 @@
-vim.cmd[[colorscheme nord]]
 
 -- Tree-sitter setup
 require'nvim-treesitter.configs'.setup {
