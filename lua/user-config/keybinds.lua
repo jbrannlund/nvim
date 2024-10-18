@@ -21,7 +21,7 @@ vim.api.nvim_set_keymap('n', '<Leader>B', [[<Cmd>lua require'dap'.set_breakpoint
 vim.api.nvim_set_keymap('n', '<Leader>dr', [[<Cmd>lua require'dap'.repl.open()<CR>]], { noremap = true, silent = true })  -- Open REPL
 vim.api.nvim_set_keymap('n', '<Leader>du', [[<Cmd>lua require'dapui'.toggle()<CR>]], { noremap = true, silent = true })  -- Toggle DAP UI
 
-vim.api.nvim_set_keymap('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
+--vim.api.nvim_set_keymap('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
 
 
 

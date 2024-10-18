@@ -1,7 +1,7 @@
 vim.wo.relativenumber = true
 vim.wo.number = true
 vim.opt.clipboard = "unnamedplus"
-vim.g.mapleader = ' '
+vim.g.mapleader = ',' 
 
 vim.cmd[[colorscheme catppuccin]]
 

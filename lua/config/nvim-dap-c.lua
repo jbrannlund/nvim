@@ -1,10 +1,11 @@
 local dap = require("dap")
+
 dap.adapters.gdb = {
   type = "executable",
   command = "gdb",
-  args = { "--interpreter=dap", "--eval-command", "set print pretty on", "--quiet"}
+  args = { "--interpreter=dap", "--eval-command", "set print pretty on", "--quiet" }
 }
-local dap = require("dap")
+
 dap.configurations.c = {
   {
     name = "Launch",
@@ -14,6 +15,10 @@ dap.configurations.c = {
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
+    args = function()
+      local input = vim.fn.input('Arguments: ')
+      return vim.split(input, " ")
+    end,
     cwd = "${workspaceFolder}",
     stopAtBeginningOfMainSubprogram = false,
   },
@@ -22,11 +27,11 @@ dap.configurations.c = {
     type = "gdb",
     request = "attach",
     program = function()
-       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
     pid = function()
-       local name = vim.fn.input('Executable name (filter): ')
-       return require("dap.utils").pick_process({ filter = name })
+      local name = vim.fn.input('Executable name (filter): ')
+      return require("dap.utils").pick_process({ filter = name })
     end,
     cwd = '${workspaceFolder}'
   },
@@ -36,8 +41,13 @@ dap.configurations.c = {
     request = 'attach',
     target = 'localhost:1234',
     program = function()
-       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    args = function()
+      local input = vim.fn.input('Arguments: ')
+      return vim.split(input, " ")
     end,
     cwd = '${workspaceFolder}'
   },
 }
+
