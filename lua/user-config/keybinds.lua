@@ -21,8 +21,7 @@ vim.api.nvim_set_keymap('n', '<Leader>B', [[<Cmd>lua require'dap'.set_breakpoint
 vim.api.nvim_set_keymap('n', '<Leader>dr', [[<Cmd>lua require'dap'.repl.open()<CR>]], { noremap = true, silent = true })  -- Open REPL
 vim.api.nvim_set_keymap('n', '<Leader>du', [[<Cmd>lua require'dapui'.toggle()<CR>]], { noremap = true, silent = true })  -- Toggle DAP UI
 
---vim.api.nvim_set_keymap('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
-
+vim.api.nvim_set_keymap('n', '<Leader>.', '<cmd>FineCmdline<CR>', {noremap = true})
 
 
 -- Key mappings for tabs using leader key
@@ -42,3 +41,7 @@ command! WQ wq
 vim.api.nvim_set_keymap('n', '<leader>sw', ':SudaWrite<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>Q', ':qa!<CR>', { noremap = true, silent = true })
+
+-- Remove esc as escape insert mode force use jk 
+vim.api.nvim_set_keymap('i', '<Esc>', '<Nop>', { noremap = true, silent = true })
+
