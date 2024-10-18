@@ -40,3 +40,5 @@ command! WQ wq
 ]])
 
 vim.api.nvim_set_keymap('n', '<leader>sw', ':SudaWrite<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>Q', ':qa!<CR>', { noremap = true, silent = true })
