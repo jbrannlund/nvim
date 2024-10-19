@@ -21,21 +21,7 @@ return {
         cmd = { "FineCmdline" }  -- Load on FineCmdline command usage
     },
     {
-        "akinsho/toggleterm.nvim",
-        version = "*",
-        event = "VimEnter",  -- Load toggleterm when entering Vim
-        config = function()
-            require("toggleterm").setup {
-                function(term)
-                    if term.direction == "horizontal" then
-                        return 15
-                    elseif term.direction == "vertical" then
-                        return vim.o.columns * 0.4
-                    end
-                end,
-                direction = 'float',
-            }
-        end
+        "voldikss/vim-floaterm"
     },
     {
 	"ggandor/leap.nvim",
