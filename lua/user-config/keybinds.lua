@@ -43,15 +43,11 @@ vim.api.nvim_set_keymap('n', '<leader>sw', ':SudaWrite<CR>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<leader>Q', ':qa!<CR>', { noremap = true, silent = true })
 
 -- Remove esc as escape insert mode force use jk 
---vim.api.nvim_set_keymap('i', '<Esc>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<Esc>', '<Nop>', { noremap = true, silent = true })
 
 -- Floatterm
 vim.api.nvim_set_keymap('n', '<Leader>T', ':FloatermNew<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>t', ':FloatermToggle<CR>', { noremap = true, silent = true })
 
--- tabtab
-vim.api.nvim_set_keymap('i', '<Tab><Tab>', '<Esc>', { noremap = true, silent = true })
 
--- Toggle line numbers with <Leader>ltn
-vim.api.nvim_set_keymap('n', '<Leader>ltn', ':set relativenumber!<CR>', { noremap = true, silent = true })
 
