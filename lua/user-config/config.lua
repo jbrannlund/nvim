@@ -12,3 +12,6 @@ vim.fn.sign_define('DapBreakpoint', { text = '🔴', texthl = '', linehl = '', n
 vim.fn.sign_define('DapBreakpointCondition', { text = '🟡', texthl = '', linehl = '', numhl = '' })
 vim.fn.sign_define('DapLogPoint', { text = '🔵', texthl = '', linehl = '', numhl = '' })
 
+vim.opt.foldmethod = 'expr' 
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldlevel = 99  -- Ensures all folds are open

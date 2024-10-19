@@ -27,6 +27,9 @@ return {
 	"ggandor/leap.nvim",
     },
     {
+    "kevinhwang91/nvim-ufo",
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         event = { "BufRead", "BufNewFile" },  -- Lazy load on file open
         run = ":TSUpdate"  -- Automatically update parsers

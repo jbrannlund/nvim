@@ -51,3 +51,7 @@ vim.api.nvim_set_keymap('n', '<Leader>t', ':FloatermToggle<CR>', { noremap = tru
 
 -- tabtab
 vim.api.nvim_set_keymap('i', '<Tab><Tab>', '<Esc>', { noremap = true, silent = true })
+
+-- Toggle line numbers with <Leader>ltn
+vim.api.nvim_set_keymap('n', '<Leader>ltn', ':set relativenumber!<CR>', { noremap = true, silent = true })
+
