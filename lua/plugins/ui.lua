@@ -24,15 +24,22 @@ return {
         "voldikss/vim-floaterm"
     },
     {
-	"ggandor/leap.nvim",
+        "ggandor/leap.nvim",
     },
     {
-    "kevinhwang91/nvim-ufo",
+        "kevinhwang91/nvim-ufo",
     },
     {
         "nvim-treesitter/nvim-treesitter",
         event = { "BufRead", "BufNewFile" },  -- Lazy load on file open
         run = ":TSUpdate"  -- Automatically update parsers
     },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl", -- Specifying the main module
+        ---@module "ibl"
+        ---@type ibl.config
+        opts = {}, -- Configuration options go here
+    }
 }
 
