@@ -1,7 +1,6 @@
 vim.wo.relativenumber = true
 vim.wo.number = true
 vim.opt.clipboard = "unnamedplus"
-vim.g.mapleader = ',' 
 vim.opt.tabstop = 4       -- Number of spaces a <Tab> counts for
 vim.opt.shiftwidth = 4    -- Number of spaces for each step of (auto)indent
 vim.opt.expandtab = true  -- Use spaces instead of tabs
