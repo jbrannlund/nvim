@@ -1,8 +1,7 @@
 return {
     {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
- 
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
         -- Remove the cmd or event for now
         config = function()
             require("neo-tree").setup()
@@ -10,29 +9,25 @@ return {
     },
     {
         "nvim-lua/plenary.nvim",
-
     },
     {
         "nvim-tree/nvim-web-devicons",
     },
     {
         "MunifTanjim/nui.nvim",
-        },
+    },
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",  -- or branch = '0.1.x'
         dependencies = { "nvim-lua/plenary.nvim" },
-        cmd = "Telescope"  -- Lazy load on using the Telescope command
+        cmd = "Telescope",  -- Lazy load on using the Telescope command
     },
     {
         "VonHeikemen/fine-cmdline.nvim",
-        cmd = { "FineCmdline" }  -- Load on FineCmdline command usage
+        cmd = { "FineCmdline" },  -- Load on FineCmdline command usage
     },
     {
-            "voldikss/vim-floaterm"
-           
-    },
-
+        "voldikss/vim-floaterm",
     },
     {
         "ggandor/leap.nvim",
@@ -43,7 +38,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         event = { "BufRead", "BufNewFile" },  -- Lazy load on file open
-        run = ":TSUpdate"  -- Automatically update parsers
+        run = ":TSUpdate",  -- Automatically update parsers
     },
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -56,7 +51,7 @@ return {
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
         config = function()
             require "startup".setup()
-        end
+        end,
     }
-
+}
 
