@@ -49,5 +49,7 @@ vim.api.nvim_set_keymap('i', '<Esc>', '<Nop>', { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<Leader>T', ':FloatermNew<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>t', ':FloatermToggle<CR>', { noremap = true, silent = true })
 
+-- Tabout
+vim.api.nvim_set_keymap('i', '<S-Tab>', '<Plug>(Tabout)', {})
 
 
