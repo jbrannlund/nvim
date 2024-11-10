@@ -9,14 +9,14 @@ return {
         end,
     },
     {
-            "nvim-lua/plenary.nvim",
+        "nvim-lua/plenary.nvim",
 
     },
     {
-            "nvim-tree/nvim-web-devicons",
+        "nvim-tree/nvim-web-devicons",
     },
     {
-            "MunifTanjim/nui.nvim",
+        "MunifTanjim/nui.nvim",
         },
     {
         "nvim-telescope/telescope.nvim",
@@ -29,7 +29,10 @@ return {
         cmd = { "FineCmdline" }  -- Load on FineCmdline command usage
     },
     {
-        "voldikss/vim-floaterm"
+            "voldikss/vim-floaterm"
+           
+    },
+
     },
     {
         "ggandor/leap.nvim",
@@ -49,11 +52,11 @@ return {
         end,
     },
     {
-    "startup-nvim/startup.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
-    config = function()
-      require "startup".setup()
-  end
-}
-}
+        "startup-nvim/startup.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
+        config = function()
+            require "startup".setup()
+        end
+    }
+
 
