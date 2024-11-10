@@ -1,18 +1,26 @@
 return {
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
-            -- "3rd/image.nvim", -- Optional image support in preview window
-        },
-        event = "BufWinEnter"  -- Load neo-tree when a buffer is opened
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+ 
+        -- Remove the cmd or event for now
+        config = function()
+            require("neo-tree").setup()
+        end,
     },
     {
+            "nvim-lua/plenary.nvim",
+
+    },
+    {
+            "nvim-tree/nvim-web-devicons",
+    },
+    {
+            "MunifTanjim/nui.nvim",
+        },
+    {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.8", -- or branch = '0.1.x'
+        tag = "0.1.8",  -- or branch = '0.1.x'
         dependencies = { "nvim-lua/plenary.nvim" },
         cmd = "Telescope"  -- Lazy load on using the Telescope command
     },
@@ -36,10 +44,9 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
-        main = "ibl", -- Specifying the main module
-        ---@module "ibl"
-        ---@type ibl.config
-        opts = {}, -- Configuration options go here
-    }
+        config = function()
+            require("ibl").setup()  -- Adjusted to call ibl's setup function
+        end,
+    },
 }
 
