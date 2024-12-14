@@ -11,3 +11,11 @@ vim.opt.shortmess:append("W")
 
 require('dap').set_log_level('DEBUG')
 require("ibl").setup()
+
+if vim.g.vscode then
+    -- VSCode extension
+else
+    -- ordinary Neovim
+end
+
+
