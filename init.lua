@@ -2,20 +2,18 @@ require("config.lazy")
 
 vim.cmd[[colorscheme catppuccin]]
 
-local load_lua_files = require("functions.load_lua_files")
-load_lua_files("lua/config")
-
--- Load user-specific configurations
-load_lua_files("lua/user-config")
 vim.opt.shortmess:append("W")
+vim.opt.clipboard = "unnamedplus"
 
-require('dap').set_log_level('DEBUG')
-require("ibl").setup()
 
-if vim.g.vscode then
-    -- VSCode extension
+if not vim.g.vscode then
+    require('dap').set_log_level('DEBUG')
+    require("ibl").setup()
+    local load_lua_files = require("functions.load_lua_files")
+    load_lua_files("lua/config")
+    load_lua_files("lua/user-config")
+
 else
-    -- ordinary Neovim
+    require('user-config.vscode') 
+
 end
-
-

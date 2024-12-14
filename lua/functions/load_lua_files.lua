@@ -8,5 +8,8 @@ local function load_lua_files(directory)
     end
 end
 
-return load_lua_files
+if not vim.g.vscode then 
+    return load_lua_files
+end
+
 

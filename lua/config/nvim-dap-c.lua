@@ -1,3 +1,4 @@
+if not vim.g.code then    
 local dap = require("dap")
 
 dap.adapters.gdb = {
@@ -50,4 +51,4 @@ dap.configurations.c = {
     cwd = '${workspaceFolder}'
   },
 }
-
+end

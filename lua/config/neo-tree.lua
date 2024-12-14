@@ -1,4 +1,4 @@
-
+if not vim.g.vscode then 
 local neo_tree = require("neo-tree")
 
 neo_tree.setup({
@@ -6,3 +6,4 @@ neo_tree.setup({
         width = 25, -- Set the desired width here
     },
 })
+end

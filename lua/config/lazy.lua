@@ -22,7 +22,6 @@ vim.g.mapleader = " "
 
 vim.g.maplocalleader = "\\"
 
-local load_lua_files = require("functions.load_lua_files")
 
 -- Setup lazy.nvim
 require("lazy").setup({

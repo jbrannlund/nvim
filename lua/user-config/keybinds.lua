@@ -17,6 +17,7 @@ vim.api.nvim_set_keymap('n', '<F11>', [[<Cmd>lua require'dap'.step_into()<CR>]],
 vim.api.nvim_set_keymap('n', '<F12>', [[<Cmd>lua require'dap'.step_out()<CR>]], { noremap = true, silent = true })  -- Step out
 vim.api.nvim_set_keymap('n', '<Leader>b', [[<Cmd>lua require'dap'.toggle_breakpoint()<CR>]], { noremap = true, silent = true })  -- Toggle breakpoint
 vim.api.nvim_set_keymap('n', '<Leader>B', [[<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>]], { noremap = true, silent = true })  -- Set conditional breakpoint
+
 vim.api.nvim_set_keymap('n', '<Leader>dr', [[<Cmd>lua require'dap'.repl.open()<CR>]], { noremap = true, silent = true })  -- Open REPL
 vim.api.nvim_set_keymap('n', '<Leader>du', [[<Cmd>lua require'dapui'.toggle()<CR>]], { noremap = true, silent = true })  -- Toggle DAP UI
 
@@ -51,5 +52,6 @@ vim.api.nvim_set_keymap('n', '<Leader>t', ':FloatermToggle<CR>', { noremap = tru
 
 -- Tabout
 vim.api.nvim_set_keymap('i', '<S-Tab>', '<Plug>(Tabout)', {})
+vim.api.nvim_set_keymap('n', 'dl', 'd$', { noremap = true, silent = true })
 
 
