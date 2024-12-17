@@ -1,7 +1,3 @@
-if vim.g.vscode then
-    vim.api.nvim_set_keymap('v', 'y', '"+y', { noremap = true, silent = true })
-end
-
 vim.opt.clipboard = "unnamedplus"
 vim.wo.relativenumber = true
 vim.wo.number = true
@@ -17,5 +13,5 @@ vim.fn.sign_define('DapLogPoint', { text = '🔵', texthl = '', linehl = '', num
 
 vim.opt.foldmethod = 'expr' 
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-    vim.opt.foldlevel = 99  -- Ensures all folds are operation
+vim.opt.foldlevel = 99  -- Ensures all folds are operation
 

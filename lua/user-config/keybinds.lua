@@ -1,6 +1,9 @@
 vim.api.nvim_set_keymap('n', '<F2>', ':Neotree toggle<CR>', { noremap = true, silent = true })
 
+-- Exit insert mode with 'jk' and 'Esc'
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true })  -- Re-enable 'Esc' for exiting insert mode
+
 
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
