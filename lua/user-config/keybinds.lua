@@ -56,5 +56,9 @@ vim.api.nvim_set_keymap('n', '<Leader>t', ':FloatermToggle<CR>', { noremap = tru
 -- Tabout
 vim.api.nvim_set_keymap('i', '<S-Tab>', '<Plug>(Tabout)', {})
 vim.api.nvim_set_keymap('n', 'dl', 'd$', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>h', '<C-w>h', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>j', '<C-w>j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>k', '<C-w>k', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>l', '<C-w>l', { noremap = true, silent = true })
 
-
+vim.api.nvim_set_keymap('n', '<Leader>q', '<C-w>w', { noremap = true, silent = true })

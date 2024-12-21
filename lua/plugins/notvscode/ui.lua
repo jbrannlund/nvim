@@ -2,35 +2,35 @@ return {
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
-        -- Remove the cmd or event for now
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+        },
         config = function()
             require("neo-tree").setup()
         end,
     },
     {
-        "nvim-lua/plenary.nvim",
-    },
-    {
-        "nvim-tree/nvim-web-devicons",
-    },
-    {
-        "MunifTanjim/nui.nvim",
-    },
-    {
         "max397574/startup.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-file-browser.nvim",
+        },
+        config = function()
+            require("startup").setup()
+        end,
     },
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",  -- or branch = '0.1.x'
+        tag = "0.1.8",
         dependencies = { "nvim-lua/plenary.nvim" },
-        cmd = "Telescope",  -- Lazy load on using the Telescope command
+        cmd = "Telescope",
     },
     {
         "VonHeikemen/fine-cmdline.nvim",
-        cmd = { "FineCmdline" },  -- Load on FineCmdline command usage
-    },
-    {
-        "voldikss/vim-floaterm",
+        cmd = { "FineCmdline" },
     },
     {
         "ggandor/leap.nvim",
@@ -40,21 +40,24 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter",
-        event = { "BufRead", "BufNewFile" },  -- Lazy load on file open
-        run = ":TSUpdate",  -- Automatically update parsers
+        event = { "BufRead", "BufNewFile" },
+        run = ":TSUpdate",
     },
     {
         "lukas-reineke/indent-blankline.nvim",
         config = function()
-            require("ibl").setup()  -- Adjusted to call ibl's setup function
+            require("ibl").setup()
         end,
     },
     {
-        "startup-nvim/startup.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
+        "christoomey/vim-tmux-navigator",
         config = function()
-            require "startup".setup()
-        end,
+            vim.g.tmux_navigator_no_mappings = 1
+            vim.api.nvim_set_keymap('n', '<C-h>', ':TmuxNavigateLeft<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<C-j>', ':TmuxNavigateDown<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<C-k>', ':TmuxNavigateUp<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<C-l>', ':TmuxNavigateRight<CR>', { noremap = true, silent = true })
+        end
     }
 }
 
