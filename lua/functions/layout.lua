@@ -7,6 +7,5 @@ local function setup_layout_and_tmux()
   vim.cmd('resize -10')
   vim.cmd('term tmux')
 end
-
 vim.keymap.set('n', '<Leader>dt', setup_layout_and_tmux, { noremap = true, silent = true })
 
