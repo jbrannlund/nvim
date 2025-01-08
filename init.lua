@@ -7,7 +7,7 @@ vim.opt.clipboard = "unnamedplus"
 
 
 if not vim.g.vscode then
-    require('dap').set_log_level('DEBUG')
+    require("mason-lspconfig").setup()
     require("ibl").setup()
     local load_lua_files = require("functions.load_lua_files")
     require('functions.layout')
