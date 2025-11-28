@@ -1,14 +1,23 @@
 return {
     {
         "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
+        branch = "main",  -- safer than v3.x
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
         },
         config = function()
-            require("neo-tree").setup()
+            local ok, neo_tree = pcall(require, "neo-tree")
+            if ok and neo_tree then
+                neo_tree.setup({
+                    window = { width = 25 },
+                    filesystem = {
+                        follow_current_file = { enabled = true },
+                        use_libuv_file_watcher = true,
+                    },
+                })
+            end
         end,
     },
     {
@@ -32,12 +41,8 @@ return {
         "VonHeikemen/fine-cmdline.nvim",
         cmd = { "FineCmdline" },
     },
-    {
-        "ggandor/leap.nvim",
-    },
-    {
-        "kevinhwang91/nvim-ufo",
-    },
+    { "ggandor/leap.nvim" },
+    { "kevinhwang91/nvim-ufo" },
     {
         "nvim-treesitter/nvim-treesitter",
         event = { "BufRead", "BufNewFile" },
@@ -69,9 +74,7 @@ return {
             "LazyGitFilter",
             "LazyGitFilterCurrentFile",
         },
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
+        dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
             { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
         },
