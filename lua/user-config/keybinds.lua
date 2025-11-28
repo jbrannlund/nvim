@@ -7,11 +7,7 @@ vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true }
 
   vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-  vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-  vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-  vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
-  vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
+
 
   -- Keybindings for controlling the debugger
 vim.api.nvim_set_keymap('n', '<F5>', [[<Cmd>lua require'dap'.continue()<CR>]], { noremap = true, silent = true })  -- Start or continue debugging
@@ -49,10 +45,6 @@ vim.api.nvim_set_keymap('n', '<leader>Q', ':qa!<CR>', { noremap = true, silent =
 -- Remove esc as escape insert mode force use jk 
 vim.api.nvim_set_keymap('i', '<Esc>', '<Nop>', { noremap = true, silent = true })
 
--- Floatterm
-vim.api.nvim_set_keymap('n', '<Leader>T', ':FloatermNew<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>t', ':FloatermToggle<CR>', { noremap = true, silent = true })
-
 -- Tabout
 vim.api.nvim_set_keymap('i', '<S-Tab>', '<Plug>(Tabout)', {})
 vim.api.nvim_set_keymap('n', 'dl', 'd$', { noremap = true, silent = true })
@@ -62,3 +54,9 @@ vim.api.nvim_set_keymap('n', '<Leader>k', '<C-w>k', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', '<Leader>l', '<C-w>l', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<Leader>q', '<C-w>w', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>dh", "<cmd>lua require'dap.ui.widgets'.hover()<CR>", { noremap=true, silent=true })
+vim.api.nvim_set_keymap('n', '<Leader>ln', ':LuxtermNew<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>lt', ':LuxtermToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>lp', ':LuxtermNext<CR>', { noremap = true, silent = true })
+
+
