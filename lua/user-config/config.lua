@@ -1,9 +1,12 @@
 vim.opt.clipboard = "unnamedplus"
 vim.wo.relativenumber = true
 vim.wo.number = true
-vim.opt.tabstop = 4       -- Number of spaces a <Tab> counts for
-vim.opt.shiftwidth = 4    -- Number of spaces for each step of (auto)indent
-vim.opt.expandtab = true  -- Use spaces instead of tabs
+vim.opt.tabstop = 4       
+vim.opt.shiftwidth = 4   
+vim.opt.expandtab = true 
+vim.opt.timeout = true
+vim.opt.timeoutlen = 250
+vim.opt.ttimeoutlen = 50
 
 vim = vim or {}
 
@@ -13,5 +16,4 @@ vim.fn.sign_define('DapLogPoint', { text = '🔵', texthl = '', linehl = '', num
 
 vim.opt.foldmethod = 'expr' 
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldlevel = 99  -- Ensures all folds are operation
-
+vim.opt.foldlevel = 99 

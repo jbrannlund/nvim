@@ -1,62 +1,45 @@
-vim.api.nvim_set_keymap('n', '<F2>', ':Neotree toggle<CR>', { noremap = true, silent = true })
+local opts = { noremap = true, silent = true }
 
--- Exit insert mode with 'jk' and 'Esc'
-vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<Esc>', '<Esc>', { noremap = true, silent = true })  -- Re-enable 'Esc' for exiting insert mode
+vim.opt.timeout = true
+vim.opt.timeoutlen = 250
+vim.opt.ttimeoutlen = 50
 
+vim.keymap.set('n', '<F2>', ':Neotree toggle<CR>', opts)
 
-  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-  vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+vim.keymap.set('i', 'jk', '<Esc>', opts)
+vim.keymap.set('i', '<Esc>', '<Nop>', opts)
 
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], opts)
+vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
 
-  -- Keybindings for controlling the debugger
-vim.api.nvim_set_keymap('n', '<F5>', [[<Cmd>lua require'dap'.continue()<CR>]], { noremap = true, silent = true })  -- Start or continue debugging
-vim.api.nvim_set_keymap('n', '<S-F10>', [[<Cmd>lua require'dap'.step_over()<CR>]], { noremap = true, silent = true })  -- Step over
-vim.api.nvim_set_keymap('n', '<F11>', [[<Cmd>lua require'dap'.step_into()<CR>]], { noremap = true, silent = true })  -- Step into
-vim.api.nvim_set_keymap('n', '<F12>', [[<Cmd>lua require'dap'.step_out()<CR>]], { noremap = true, silent = true })  -- Step out
-vim.api.nvim_set_keymap('n', '<Leader>b', [[<Cmd>lua require'dap'.toggle_breakpoint()<CR>]], { noremap = true, silent = true })  -- Toggle breakpoint
-vim.api.nvim_set_keymap('n', '<Leader>B', [[<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>]], { noremap = true, silent = true })  -- Set conditional breakpoint
+vim.keymap.set('n', '<Leader>.', '<cmd>FineCmdline<CR>', opts)
+vim.keymap.set('n', ':', '<cmd>FineCmdline<CR>', opts)
 
-vim.api.nvim_set_keymap('n', '<Leader>dr', [[<Cmd>lua require'dap'.repl.open()<CR>]], { noremap = true, silent = true })  -- Open REPL
-vim.api.nvim_set_keymap('n', '<Leader>du', [[<Cmd>lua require'dapui'.toggle()<CR>]], { noremap = true, silent = true })  -- Toggle DAP UI
+vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', opts)
+vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', opts)
+vim.keymap.set('n', '<leader>tl', ':tabnext<CR>', opts)
+vim.keymap.set('n', '<leader>th', ':tabprevious<CR>', opts)
 
-vim.api.nvim_set_keymap('n', '<Leader>.', '<cmd>FineCmdline<CR>', {noremap = true})
-vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>sh', ':split<CR>', opts)
+vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', opts)
 
+vim.cmd([[command! WQ wq]])
 
--- Key mappings for tabs using leader key
-vim.api.nvim_set_keymap('n', '<leader>tn', ':tabnew<CR>', { noremap = true, silent = true }) -- Open new tab
-vim.api.nvim_set_keymap('n', '<leader>tc', ':tabclose<CR>', { noremap = true, silent = true }) -- Close current tab
-vim.api.nvim_set_keymap('n', '<leader>tl', ':tabnext<CR>', { noremap = true, silent = true }) -- Switch to next tab
-vim.api.nvim_set_keymap('n', '<leader>th', ':tabprevious<CR>', { noremap = true, silent = true }) -- Switch to previous tab
+vim.keymap.set('n', '<leader>sw', ':SudaWrite<CR>', opts)
+vim.keymap.set('n', '<leader>Q', ':qa!<CR>', opts)
 
--- Key mappings for splitting windows using leader key
-vim.api.nvim_set_keymap('n', '<leader>sh', ':split<CR>', { noremap = true, silent = true }) -- Split window horizontally
-vim.api.nvim_set_keymap('n', '<leader>sv', ':vsplit<CR>', { noremap = true, silent = true }) -- Split window vertically
+vim.keymap.set('i', '<S-Tab>', '<Plug>(Tabout)', opts)
+vim.keymap.set('n', 'dl', 'd$', opts)
 
-vim.cmd([[
-command! WQ wq
-]])
+vim.keymap.set('n', '<Leader>h', '<C-w>h', opts)
+vim.keymap.set('n', '<Leader>j', '<C-w>j', opts)
+vim.keymap.set('n', '<Leader>k', '<C-w>k', opts)
+vim.keymap.set('n', '<Leader>l', '<C-w>l', opts)
+vim.keymap.set('n', '<Leader>q', '<C-w>w', opts)
 
-vim.api.nvim_set_keymap('n', '<leader>sw', ':SudaWrite<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>dh', "<cmd>lua require'dap.ui.widgets'.hover()<CR>", opts)
 
-vim.api.nvim_set_keymap('n', '<leader>Q', ':qa!<CR>', { noremap = true, silent = true })
-
--- Remove esc as escape insert mode force use jk 
-vim.api.nvim_set_keymap('i', '<Esc>', '<Nop>', { noremap = true, silent = true })
-
--- Tabout
-vim.api.nvim_set_keymap('i', '<S-Tab>', '<Plug>(Tabout)', {})
-vim.api.nvim_set_keymap('n', 'dl', 'd$', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>h', '<C-w>h', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>j', '<C-w>j', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>k', '<C-w>k', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>l', '<C-w>l', { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap('n', '<Leader>q', '<C-w>w', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>dh", "<cmd>lua require'dap.ui.widgets'.hover()<CR>", { noremap=true, silent=true })
-vim.api.nvim_set_keymap('n', '<Leader>ln', ':LuxtermNew<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>lt', ':LuxtermToggle<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>lp', ':LuxtermNext<CR>', { noremap = true, silent = true })
-
+vim.keymap.set('n', '<Leader>ln', ':LuxtermNew<CR>', opts)
+vim.keymap.set('n', '<Leader>lt', ':LuxtermToggle<CR>', opts)
+vim.keymap.set('n', '<Leader>lp', ':LuxtermNext<CR>', opts)
 
